@@ -14,6 +14,7 @@ body{
   /*background: color image repeat position/size */
   display: block;
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 
 :root{
@@ -50,7 +51,7 @@ body *{
 #profile img{
   display: block;
   margin: auto;
-  background-size: contain;
+  background-size: 100vh;
 }
 .avatar{
   width: 112px;
@@ -158,4 +159,12 @@ a ion-icon {
 }
 .footer{
   text-align: center;
+}
+@media (max-width: 700px) {
+  :root {
+    --bg-url: url(./imagens/bg-mobile-dark.jpg);
+  }
+  .light {
+    --bg-url: url(./imagens/bg-mobile-light.jpg);
+  }
 }
