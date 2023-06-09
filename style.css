@@ -10,13 +10,11 @@ body{
   background-position: top center;
   background-size: cover;
   */
-
   /*background: color image repeat position/size */
   display: block;
   background: var(--bg-url) no-repeat top center/cover;
   height: 100vh;
 }
-
 :root{
   --text-color: white;
   --bg-url: url(./imagens/bg-desktop-dark.jpg);
@@ -33,7 +31,6 @@ body{
   --surface-color: rgba(0, 0, 0, 0.1);
   --surface-color-hover: rgba(255, 255, 255, 0.2);
 }
-
 body *{
   font-family: 'Inter', sans-serif;
   color: var(--text-color);
@@ -58,7 +55,7 @@ body *{
   height: 112px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  background: no-repeat top/cover;
+  background: no-repeat top center/cover;
 }
 #profile p{
   font-family: 'Inter';
@@ -121,7 +118,6 @@ a ion-icon {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
-
 /* switch */
 #switch{
   position: relative;
@@ -136,17 +132,17 @@ a ion-icon {
   border-radius: 50%;
 
   position: absolute;
-  left: 0;
   top: 50%;
+  animation: slide-out 0.2s;
   z-index: 1;
   transform: translateY(-50%);
 }
-
-.light #switch button{
-  right: 0;
-  left: initial;
+#switch button:hover{
+  outline: 8px solid var(--surface-color-hover)
 }
-
+.light #switch button{
+  animation: slide-in .2s forwards;
+}
 #switch span{
   display: block;
 
@@ -166,5 +162,21 @@ a ion-icon {
   }
   .light {
     --bg-url: url(./imagens/bg-mobile-light.jpg);
+  }
+}
+@keyframes slide-in{
+  from{
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+@keyframes slide-out{
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
   }
 }
