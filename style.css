@@ -48,7 +48,7 @@ body *{
 #profile img{
   display: block;
   margin: auto;
-  background-size: 100vh;
+  object-fit: cover;
 }
 .avatar{
   width: 112px;
@@ -155,6 +155,9 @@ a ion-icon {
 }
 .footer{
   text-align: center;
+}
+.footer a {
+  text-decoration: none;
 }
 @media (max-width: 700px) {
   :root {
